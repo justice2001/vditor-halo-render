@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #title {
+            display: flex;
+            gap: 20px;
+        }
+
+        #title h3 {
+            flex: 1 1;
+        }
+
+        #shower {
+            display: flex;
+            min-height: 200px;
+            gap: 20px;
+        }
+
+        #editor,
+        #preview {
+            min-height: 200px;
+            flex: 1 1;
+        }
+
+        #preview {
+            border: 1px solid red;
+        }
+
+        #html {
+            width: 100%;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">HALO RENDER DEMO</h1>
+<div id="title">
+    <h3>SOURCE</h3>
+    <h3>RENDER DIST</h3>
+</div>
+<div id="shower">
+    <textarea id="editor"></textarea>
+    <div id="preview"></div>
+</div>
+<h2>HTML CODE</h2>
+<textarea id="html"></textarea>
+</body>
+</html>
