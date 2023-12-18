@@ -4,6 +4,10 @@ const editor = document.getElementById("editor")
 const preview = document.getElementById("preview")
 const html = document.getElementById("html")
 
+window.addEventListener('load', () => {
+    render()
+})
+
 editor.addEventListener("input", e => {
     render()
 })

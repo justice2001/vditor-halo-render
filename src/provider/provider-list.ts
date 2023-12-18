@@ -3,5 +3,6 @@ import {Provider} from "./provider";
 import {GitProvider} from "./git-provider";
 
 export const ProviderList:Array<Provider> = [
-    new TipsProvider()
+    new TipsProvider(),
+    new GitProvider()
 ]
