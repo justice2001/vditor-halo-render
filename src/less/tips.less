@@ -1,0 +1,44 @@
+@border-width: 4px;
+@border-type: solid;
+// Warning
+@warn-color: darkorange;
+@warn-bg-color: lightyellow;
+// DANGER
+@danger-color: darkred;
+@danger-bg-color: lightpink;
+// Success
+@success-color: darkgreen;
+@success-bg: lightgreen;
+// Info
+@info-color: #0052d9;
+@info-bg: lightblue;
+
+.tips {
+  padding: 5px 10px;
+  border-left-style: @border-type;
+  border-left-width: @border-width;
+
+  &&-warn {
+    background-color: @warn-bg-color;
+    color: @warn-color;
+    border-left-color: @warn-color;
+  }
+
+  &&-danger {
+    background-color: @danger-bg-color;
+    color: @danger-color;
+    border-left-color: @danger-color;
+  }
+
+  &&-success {
+    background-color: @success-bg;
+    color: @success-color;
+    border-left-color: @success-color;
+  }
+
+  &&-info {
+    background-color: @info-bg;
+    color: @info-color;
+    border-left-color: @info-color;
+  }
+}
