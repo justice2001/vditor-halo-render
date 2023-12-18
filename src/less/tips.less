@@ -1,4 +1,5 @@
-@border-width: 4px;
+@import "constant";
+@border-width: 6px;
 @border-type: solid;
 // Warning
 @warn-color: darkorange;
@@ -17,6 +18,9 @@
   padding: 5px 10px;
   border-left-style: @border-type;
   border-left-width: @border-width;
+  border-radius: @border-radius;
+  border-left-color: #666666;
+  background-color: #eeeeee;
 
   &&-warn {
     background-color: @warn-bg-color;
