@@ -1,20 +1,12 @@
-import "./less/tips.less"
 import "./less/render.less"
 import {RENDER_CLASS} from "./constant";
+import {ProviderFactory} from "./provider/provider";
 
 export const haloRender = (src: string): string => {
     src = src.trim()
-    const lines = src.split("\n");
-    let html: string = ""
-    const type = lines[0]
-    if (type.startsWith("tips")) {
-        html = `<div class="${RENDER_CLASS} tips ${type.replace(":", "-")}">`
-        lines.forEach((line: string, index: number) => {
-            if (index === 0) return
-            if (line) html += `<div>${line}</div>`
-        })
-        html += "</div>"
-        return html
-    }
-    return "<p>Working</p>"
+    const line = src.split("\n");
+    const type = line[0]
+    line.splice(0, 1)
+    const content = line.join("\n")
+    return ProviderFactory.getFactory().process(type, content)
 }
