@@ -1,5 +1,5 @@
 import {getGitHubInfo} from "./github-utils";
-import {LANGUAGE_COLOR, RENDER_CLASS} from "../../constant";
+import {HALO_RENDER_CACHE_VERSION, LANGUAGE_COLOR, RENDER_CLASS} from "../../constant";
 
 export const cache: {[key: string]: RepoInfo|-1} = {}
 
@@ -28,11 +28,21 @@ export function fillContent(id: string,
     // 检测本地缓存
     const storageCache = localStorage.getItem(`git_cache:${id}`)
     if (storageCache) {
-        return fill(id, <RepoInfo>(JSON.parse(storageCache)))
+        const cacheJson: RepoInfo = JSON.parse(storageCache)
+        // 检查版本与过期时间
+        if (cacheJson.version === HALO_RENDER_CACHE_VERSION &&
+            new Date() < new Date(cacheJson.expireTime||0))
+            return fill(id, <RepoInfo>cacheJson)
+        localStorage.removeItem(`git_cache:${id}`)
     }
     cache[id] = -1
     utils[func](args).then(r => {
         cache[id] = r
+        // 加入缓存版本
+        r.version = HALO_RENDER_CACHE_VERSION
+        // 加入过期时间
+        r.expireTime = new Date().setTime(new Date().getTime() + 30*60*1000)
+        // 存储缓存
         localStorage.setItem(`git_cache:${id}`, JSON.stringify(r))
         fill(id, r)
         document.querySelectorAll("." + id).forEach(el => {
@@ -68,6 +78,7 @@ export declare interface IGitArgs {
 }
 
 export declare interface RepoInfo {
+    version?: string
     platform?: string
     name?: string
     owner?: string
@@ -80,4 +91,6 @@ export declare interface RepoInfo {
     description?: string
     language?: string
     lastPush?: string
+    topic?: Array<string>
+    expireTime?: number
 }
