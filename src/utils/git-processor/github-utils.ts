@@ -11,6 +11,7 @@ export async function getGitHubInfo(args: IGitArgs): Promise<RepoInfo> {
         })
     })
     return {
+        platform: "github",
         url: json["html_url"],
         owner: json["owner"]["login"],
         name: json["name"],

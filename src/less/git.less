@@ -1,6 +1,10 @@
 @import "constant";
 
+@git-color: #3478CD;
+
 .git {
+  display: flex;
+  gap: 10px;
   border: 1px solid #ececec;
   padding: 10px;
   border-radius: @border-radius;
@@ -12,8 +16,50 @@
 
   & .repo-name a {
     font-size: 18px;
-    color: #0052d9;
+    color: @git-color;
     text-decoration: none;
+  }
+
+  & .icon {
+    font-family: "iconfont", serif;
+    font-size: 24px;
+    color: #333333;
+  }
+
+  & .info {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    & .language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      & .dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+      }
+    }
+
+    & .count {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      & .count-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      & .icon {
+        font-size: 18px;
+        color: #818181;
+      }
+    }
   }
 
   .description {
