@@ -1,4 +1,4 @@
-import {haloRender} from "../src";
+import HaloJs, {haloJs, haloRender} from "../src";
 
 const editor = document.getElementById("editor")
 const preview = document.getElementById("preview")
@@ -12,7 +12,7 @@ const render = () => {
     const text = editor.value
     let ht = ""
     text.split("---").forEach(ele => {
-        ht += haloRender(ele)
+        ht += HaloJs.renderHalo(ele)
     })
     console.log(ht)
     preview.innerHTML = ht

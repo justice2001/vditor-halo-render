@@ -7,13 +7,41 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].js"
+        filename: "[name].js",
+        library: 'HaloJs',
+        libraryExport: 'default',
     },
     resolve: {
         extensions: ['.ts', '.js', '.less', 'png'],
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                exclude: '/node_modules/',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            [
+                                '@babel/env',
+                                {
+                                    targets: {
+                                        browsers: [
+                                            'last 2 Chrome major versions',
+                                            'last 2 Firefox major versions',
+                                            'last 2 Safari major versions',
+                                            'last 2 Edge major versions',
+                                            'last 2 iOS major versions',
+                                            'last 2 ChromeAndroid major versions',
+                                        ],
+                                    },
+                                },
+                            ],
+                        ],
+                    },
+                },
+            },
             {
                 test: /\.tsx?$/,
                 use: "ts-loader",
@@ -39,5 +67,5 @@ module.exports = {
             filename: "index.css"
         })
     ],
-    mode: "development"
+    mode: "production"
 }
