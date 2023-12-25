@@ -6,4 +6,4 @@ export const LANGUAGE_COLOR: {[key: string]: string} = {
     "Default": "#333333"
 }
 
-export const HALO_RENDER_CACHE_VERSION = "v1.1.0-1"
+export const HALO_RENDER_CACHE_VERSION = "v1.1.0-2"

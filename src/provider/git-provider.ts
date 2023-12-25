@@ -18,7 +18,7 @@ export class GitProvider implements Provider {
     process(type: string, content: string): string {
         let list = type.split(":");
         let rp = list[1]
-        if (!rp || !rp.endsWith("]")) return "<div class='git'><div class='error'>Git: Syntax Error</div></div>"
+        if (!rp || !rp.endsWith("]")) return `<div class='${RENDER_CLASS} git'><div class='error'>Git: Syntax Error</div></div>`
         rp = rp.replace("[", "")
             .replace("]", "")
         const [platformRaw, owner, repo] = rp.split("/");

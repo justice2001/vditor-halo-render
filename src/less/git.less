@@ -9,6 +9,94 @@
   padding: 10px;
   border-radius: @border-radius;
 
+  & .information {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & .info {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      & .topics {
+        position: relative;
+        display: flex;
+        gap: 5px;
+        color: #ffffff;
+        font-size: 12px;
+        max-width: 30%;
+        overflow: hidden;
+        transition: max-width .2s;
+        cursor: pointer;
+
+        &:after {
+          position: absolute;
+          display: block;
+          width: 20px;
+          height: 30px;
+          right: 0;
+          background: linear-gradient(to right ,transparent, #ffffff);
+          content: '';
+          transition: width .2s;
+        }
+
+        &:hover:after {
+          width: 0;
+        }
+
+        &:hover {
+          max-width: 70%;
+        }
+
+        & .topic {
+          background-color: #3478CD;
+          padding: 3px 5px;
+          border-radius: 3px;
+        }
+      }
+
+      & .language {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        & .dot {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+        }
+      }
+
+      & .count {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        & .count-item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+
+        & .icon {
+          font-size: 18px;
+          color: #818181;
+        }
+      }
+    }
+
+    .description {
+      font-size: 14px;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #999999;
+    }
+  }
+
   .error {
     color: darkred;
     text-align: center;
@@ -26,49 +114,5 @@
     color: #333333;
   }
 
-  & .info {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
 
-    & .language {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-
-      & .dot {
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-      }
-    }
-
-    & .count {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      & .count-item {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      & .icon {
-        font-size: 18px;
-        color: #818181;
-      }
-    }
-  }
-
-  .description {
-    font-size: 14px;
-    margin: 10px 0;
-  }
-
-  .info {
-    font-size: 14px;
-    color: #999999;
-  }
 }

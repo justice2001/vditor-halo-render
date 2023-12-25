@@ -20,6 +20,8 @@ export async function getGitHubInfo(args: IGitArgs): Promise<RepoInfo> {
         language: json["language"],
         description: json["description"],
         openIssues: json["open_issues"],
-        lastPush: json["pushed_at"]
+        lastPush: json["pushed_at"],
+        forks: json["forks"],
+        topic: json["topics"]
     }
 }

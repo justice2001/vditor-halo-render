@@ -50,7 +50,7 @@ export function fillContent(id: string,
         })
     }).catch(e => {
         document.querySelectorAll("." + id).forEach(el => {
-            el.innerHTML = `<div class='${RENDER_CLASS} git error'>Error Fetch: ` + e.code + `(${e.msg})</div>`
+            el.innerHTML = `<div class='error'>Error Fetch: ` + e.code + `(${e.msg})</div>`
         })
         delete cache[id]
     })
@@ -62,13 +62,21 @@ function fill(id: string, info: RepoInfo):string {
     const lang = `<span class="language" style="color: ${languageColor}">` +
         `<span class="dot" style="background-color: ${languageColor};"></span>${info.language}</span>`
     const count = `<div class="count">`+
-        `<span class="count-item"><span class="icon">&#xe7df;</span>${info.stars}</span>`+
-        `<span class="count-item"><span class="icon">&#xe764;</span>${info.openIssues}</span>` +
+        `<span class="count-item"><span class="icon">&#xe7df;</span>${info.stars||0}</span>`+
+        `<span class="count-item"><span class="icon">&#xe641;</span>${info.forks||0}</span>` +
+        `<span class="count-item"><span class="icon">&#xe764;</span>${info.openIssues||0}</span>` +
         `</div>`
+    let topics = `<div class="topics">`
+    let topicsCount = 0
+    info.topic?.forEach(topic => {
+        if (topicsCount < 5)
+            topics += `<span class='topic'>${topic}</span>`
+    })
+    topics += "</div>"
     return `<span class="icon">${icons[info.platform || "github"]}</span>` +
     `<div class="information"><div class="repo-name"><a href="${info.url}">${info.owner}/${info.name}</a></div>` +
         `<div class="description">${info.description}</div>` +
-        `<div class="info">${lang} ${count}</div>` +
+        `<div class="info">${lang} ${info.topic?.length ? topics : ""} ${count}</div>` +
         `</div>`
 }
 
