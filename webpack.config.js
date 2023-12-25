@@ -17,6 +17,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /.(woff2?|eot|ttf|otf)(.*)?$/,
+                exclude: "/node-modules/",
+                loader: "file-loader"
+            },
+            {
                 test: /\.js$/,
                 exclude: '/node_modules/',
                 use: {

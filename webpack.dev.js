@@ -1,6 +1,7 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     watch: true,
@@ -16,6 +17,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /.(woff2?|eot|ttf|otf)(.*)?$/,
+                exclude: "/node-modules/",
+                loader: "file-loader"
+            },
             {
                 test: /\.tsx?$/,
                 use: "ts-loader",
@@ -45,6 +51,11 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: "index.css"
+        }),
+        new CopyPlugin({
+            patterns: [
+                {from: "src/fonts", to: "fonts"}
+            ]
         })
     ],
     devServer: {

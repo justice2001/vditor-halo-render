@@ -15,34 +15,75 @@
 @info-bg: lightblue;
 
 .tips {
-  padding: 5px 10px;
+  position: relative;
+  margin: 20px;
+  padding: 15px 15px;
   border-left-style: @border-type;
   border-left-width: @border-width;
   border-radius: @border-radius;
   border-left-color: #666666;
   background-color: #eeeeee;
 
+  &&:after {
+    font-family: "iconfont", serif !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 4px;
+    border-radius: 50%;
+    color: #eeeeee;
+    background-color: #666666;
+    display: block;
+    position: absolute;
+    left: calc(-12px - @border-width / 2);
+    top: 6px;
+    content: "\e77e";
+  }
+
   &&-warn {
     background-color: @warn-bg-color;
     color: @warn-color;
     border-left-color: @warn-color;
+
+    &&:after {
+      color: @warn-bg-color;
+      background-color: @warn-color;
+      content: "\e671";
+    }
   }
 
   &&-danger {
     background-color: @danger-bg-color;
     color: @danger-color;
     border-left-color: @danger-color;
+
+    &&:after {
+      background-color: @danger-color;
+      color: @danger-bg-color;
+      content: "\e671";
+    }
   }
 
   &&-success {
     background-color: @success-bg;
     color: @success-color;
     border-left-color: @success-color;
+
+    &&:after {
+      background-color: @success-color;
+      color: @success-bg;
+    }
   }
 
   &&-info {
     background-color: @info-bg;
     color: @info-color;
     border-left-color: @info-color;
+
+    &&:after {
+      color: @info-bg;
+      background-color: @info-color;
+    }
   }
 }
