@@ -2,42 +2,41 @@
 @border-width: 6px;
 @border-type: solid;
 // Warning
-@warn-color: darkorange;
-@warn-bg-color: lightyellow;
+@warn-color: #FF8C00;
+@warn-bg-color: #FFFAED;
 // DANGER
-@danger-color: darkred;
-@danger-bg-color: lightpink;
+@danger-color: #C31919;
+@danger-bg-color: #FFEDED;
 // Success
-@success-color: darkgreen;
-@success-bg: lightgreen;
+@success-color: #05B800;
+@success-bg: #F2FFED;
 // Info
-@info-color: #0052d9;
-@info-bg: lightblue;
+@info-color: #3478CD;
+@info-bg: #F1F7FF;
 
 .tips {
   position: relative;
-  margin: 20px;
   padding: 15px 15px;
   border-left-style: @border-type;
   border-left-width: @border-width;
   border-radius: @border-radius;
-  border-left-color: #666666;
-  background-color: #eeeeee;
+  border-left-color: #818181;
+  background-color: #F4F4F4;
 
   &&:after {
     font-family: "iconfont", serif !important;
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding: 4px;
+    padding: 3px;
     border-radius: 50%;
-    color: #eeeeee;
-    background-color: #666666;
+    color: #F4F4F4;
+    background-color: #818181;
     display: block;
     position: absolute;
-    left: calc(-12px - @border-width / 2);
-    top: 6px;
+    left: calc(-10px - @border-width / 2);
+    top: 4px;
     content: "\e77e";
   }
 
