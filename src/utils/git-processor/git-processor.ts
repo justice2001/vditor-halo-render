@@ -17,9 +17,15 @@ export function fillContent(id: string,
         // 直接处理;
         return fill(id, <RepoInfo>cache[id])
     }
+    // 检测本地缓存
+    const storageCache = localStorage.getItem(`git_cache:${id}`)
+    if (storageCache) {
+        return fill(id, <RepoInfo>(JSON.parse(storageCache)))
+    }
     cache[id] = -1
     utils[func](args).then(r => {
         cache[id] = r
+        localStorage.setItem(`git_cache:${id}`, JSON.stringify(r))
         fill(id, r)
         document.querySelectorAll("." + id).forEach(el => {
             el.innerHTML = fill(id, r)
