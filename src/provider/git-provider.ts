@@ -1,6 +1,7 @@
 import {Provider} from "./provider";
 import {fillContent} from "../utils/git-processor/git-processor";
 import "../less/git.less"
+import {RENDER_CLASS} from "../constant";
 
 export class GitProvider implements Provider {
     check(type: string): boolean {
@@ -28,9 +29,9 @@ export class GitProvider implements Provider {
             repo: repo
         })
         if (res) {
-            return `<div class='git git-${owner}-${repo}'>${res}</div>`
+            return `<div class='${RENDER_CLASS} git git-${owner}-${repo}'>${res}</div>`
         }
-        return `<div class='git git-${owner}-${repo}'>Waiting</div>`;
+        return `<div class='${RENDER_CLASS} git git-${owner}-${repo}'>Waiting</div>`;
     }
 
 }
