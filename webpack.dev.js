@@ -54,7 +54,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                {from: "src/fonts", to: "fonts"}
+                {from: "src/fonts", to: "fonts"},
+                {from: "types", to: ""}
             ]
         })
     ],

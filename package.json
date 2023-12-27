@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "A render for halo-plugin-vditor",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "webpack serve --config webpack.dev.js",
     "build": "webpack"

@@ -9,8 +9,10 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js",
+        libraryTarget: "umd",
         library: 'HaloJs',
         libraryExport: 'default',
+        globalObject: 'this',
     },
     resolve: {
         extensions: ['.ts', '.js', '.less', 'png'],
@@ -74,7 +76,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                {from: "src/fonts", to: "fonts"}
+                {from: "src/fonts", to: "fonts"},
+                {from: "types", to: "types"}
             ]
         })
     ],

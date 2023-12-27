@@ -12,7 +12,7 @@ const render = () => {
     const text = editor.value
     let ht = ""
     text.split("---").forEach(ele => {
-        ht += HaloJs.renderHalo(ele)
+        ht += HaloJs.renderHalo(ele, ".")
     })
     console.log(ht)
     preview.innerHTML = ht
