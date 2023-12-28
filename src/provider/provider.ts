@@ -3,7 +3,7 @@ import {ProviderList} from "./provider-list";
 
 export declare interface Provider {
     check: (type: string) => boolean
-    process: (type:string,content: string) => string
+    process: (type:string,content: string, options: IOptions) => string
 }
 
 export class ProviderFactory {
@@ -14,11 +14,13 @@ export class ProviderFactory {
         this.providers = providers;
     }
 
-    process(type: string, content: string) {
+    process(type: string, content: string, options: IOptions = {
+        cdn: "."
+    }) {
         let html = "<h2 class='invalid-type'>Invalid Type!</h2>"
         this.providers.forEach(provider => {
             if (provider.check(type)) {
-                html = provider.process(type, content)
+                html = provider.process(type, content, options)
                 return
             }
         })
@@ -31,4 +33,8 @@ export class ProviderFactory {
         }
         return this.manager
     }
+}
+
+export interface IOptions {
+    cdn: string;
 }
