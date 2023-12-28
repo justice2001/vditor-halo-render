@@ -1,0 +1,44 @@
+@import "constant";
+
+.drive {
+  border: 1px solid @secondary-light;
+  border-radius: @border-radius;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+
+  .drive-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .platform {
+      display: flex;
+      align-items: center;
+
+      .drive-icon {
+        width: 30px;
+      }
+
+      span {
+        font-size: 16px;
+        margin-left: 5px;
+        color: @info-color;
+      }
+    }
+  }
+
+  .download-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .drive-password {
+      color: @secondary;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+}

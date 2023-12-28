@@ -77,6 +77,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {from: "src/fonts", to: "fonts"},
+                {from: "src/icons", to: "icons"},
                 {from: "types", to: "types"}
             ]
         })
