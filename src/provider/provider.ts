@@ -1,5 +1,6 @@
 import {TipsProvider} from "./tips-provider";
 import {ProviderList} from "./provider-list";
+import {RENDER_CLASS} from "../constant";
 
 export declare interface Provider {
     check: (type: string) => boolean
@@ -17,7 +18,7 @@ export class ProviderFactory {
     process(type: string, content: string, options: IOptions = {
         cdn: "."
     }) {
-        let html = "<h2 class='invalid-type'>Invalid Type!</h2>"
+        let html = `<div class='${RENDER_CLASS} invalid-type'>Invalid Type</div>`
         this.providers.forEach(provider => {
             if (provider.check(type)) {
                 html = provider.process(type, content, options)
