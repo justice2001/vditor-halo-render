@@ -1,10 +1,12 @@
 import {getGitHubInfo} from "./github-utils";
 import {HALO_RENDER_CACHE_VERSION, LANGUAGE_COLOR, RENDER_CLASS} from "../../constant";
+import {getGiteeInfo} from "./gitee-utils";
 
 export const cache: {[key: string]: RepoInfo|-1} = {}
 
 export const utils: {[key: string]: (args: IGitArgs) => Promise<RepoInfo>} = {
-    "github": getGitHubInfo
+    "github": getGitHubInfo,
+    "gitee": getGiteeInfo
 }
 
 export const icons: {[key: string]: string} = {
