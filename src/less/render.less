@@ -2,33 +2,39 @@
 
 .halo-render {
  margin: 5px;
-}
 
-.invalid-type {
- color: red;
- font-size: 20px;
- text-align: center;
- padding: 10px;
- background-color: lightpink;
- border-radius: @border-radius;
+ .btn {
+  background-color: @info-color;
+  color: #ffffff;
+  padding: 5px 8px;
+  text-align: center;
+  border-radius: @border-radius;
+  font-size: 14px;
+  min-width: 80px;
+  text-decoration: none;
+ }
+
+ .error {
+  text-align: center;
+  color: @danger-color;
+ }
+
+ .invalid-type {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: lightpink;
+  border-radius: @border-radius;
+ }
+
+ .iconfont {
+  font-family: iconfont, sans-serif;
+  font-size: 16px;
+ }
 }
 
 .halo-render-wrapper {
   margin: 20px 15px;
 }
 
-.btn {
- background-color: @info-color;
- color: #ffffff;
- padding: 5px 8px;
- text-align: center;
- border-radius: @border-radius;
- font-size: 14px;
- min-width: 80px;
- text-decoration: none;
-}
-
-.error {
- text-align: center;
- color: @danger-color;
-}
