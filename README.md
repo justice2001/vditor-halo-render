@@ -42,6 +42,13 @@ renderHalo方法会返回解析后的html结构。renderHalo的参数与返回�
 function renderHalo(content: string, cdn: string): string;
 ```
 
+## 语法参考
+
+- [语法介绍](doc/general.md)
+- [Tips组件](doc/tips.md)
+- [Git组件](doc/git.md)
+- [资源组件](doc/drive.md)
+
 ## 开发
 
 1. 安装依赖
