@@ -1,5 +1,9 @@
 # 资源分享组件
 
+<p align="center">
+<img src="assets/drive.png" style="max-width: 400px; margin: auto;">
+</p>
+
 资源分享组件可以帮助用户生成一个分享展示的模块，它会包含资源平台、资源内容、链接按钮和提取码的信息。
 
 当前资源平台支持百度网盘和阿里网盘的显示。

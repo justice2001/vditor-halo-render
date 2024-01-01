@@ -1,6 +1,8 @@
 # Tips组件
 
-![Tips Module](assets/tips.png)
+<p align="center">
+<img src="assets/tips.png" style="max-width: 400px; margin: auto;">
+</p>
 
 Tips为用户提供了多彩的提示组件，支持五种类型：`default`、`danger`、`success`、`warn`、`info`。
 
