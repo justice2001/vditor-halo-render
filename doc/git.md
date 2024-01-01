@@ -1,4 +1,4 @@
-# Git组件
+# 🧩 Git组件
 
 <p align="center">
 <img src="assets/git.png" style="max-width: 400px; margin: auto;">
@@ -11,7 +11,7 @@ Git组件为用户提供了在页面中嵌入git仓库的解决方案，常用�
 - `GitHub`: 无需配置URL
 - `Gitee`: 无需配置URL
 
-## 语法
+## 🖊️ 语法
 
 ```markdown
 git:[<url>@<platform>/<owner>/<repository>]
@@ -38,7 +38,7 @@ URL示例：`https://gitlab.example.com/`
 
 仓库名称
 
-## 示例
+## 📄 示例
 - GitHub平台
 
     ```markdown

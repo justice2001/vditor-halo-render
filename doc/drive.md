@@ -1,4 +1,4 @@
-# 资源分享组件
+# 🧩 资源分享组件
 
 <p align="center">
 <img src="assets/drive.png" style="max-width: 400px; margin: auto;">
@@ -8,7 +8,7 @@
 
 当前资源平台支持百度网盘和阿里网盘的显示。
 
-## 语法
+## 🖊️ 语法
 
 ```markdown
 drive:<platform>
@@ -30,7 +30,7 @@ password: <password>
 
 平台实际上只是一个icon和标题的组合，并不会影响资源的访问，如果您不介意，您可以在下方的配置中填写任意的链接。
 
-## 示例
+## 📄 示例
 
 - 阿里云盘
   
