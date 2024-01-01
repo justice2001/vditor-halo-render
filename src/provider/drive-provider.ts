@@ -29,7 +29,7 @@ export class DriveProvider implements Provider {
                 `<span>${PLATFORM_LIST[driveInfo.platform].name}</span>` +
                 `</div>`
             html += `<div class="drive-info"> ${platform} <div class="drive-title">${driveInfo.name}</div></div>`
-            html += `<div class="download-info"><a class="btn" href="${driveInfo.link}" target="_blank">下载资源</a>`
+            html += `<div class="download-info"><a class="btn" href="${driveInfo.link}" target="_blank"><span class="iconfont">&#xeb2c;</span>下载资源</a>`
             if (driveInfo.password) {
                 html += `<div class="drive-password">提取码: ${driveInfo.password}</div>`
             }

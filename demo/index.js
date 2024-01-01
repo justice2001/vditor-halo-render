@@ -50,6 +50,10 @@ git:[@github/justice2001/halo-plugin-vditor]
 
 ---
 
+git:[@gitee/blossom-editor/blossom]
+
+---
+
 drive:baidu
 name: 网站资源集合
 link: https://www.baidu.com/

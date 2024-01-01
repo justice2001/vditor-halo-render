@@ -1,27 +1,21 @@
 # Tips组件
 
-使用`tips:[type]`来启用，type支持`info`, `success`, `danger`, `warn`四种类型
+![Tips Module](assets/tips.png)
 
+Tips为用户提供了多彩的提示组件，支持五种类型：`default`、`danger`、`success`、`warn`、`info`。
+
+同时内容支持渲染HTML内容。
+
+## 语法
+
+```markdown
+tips:<type>
+<content>
 ```
-tips:info
 
-Here is success
+## 示例
 
----
-
-tips:success
-
-Here is success
-
----
-
+```markdown
 tips:danger
-
-Here is danger
-
----
-
-tips:warn
-
-Here is Warning
+This is a Danger type tips
 ```
