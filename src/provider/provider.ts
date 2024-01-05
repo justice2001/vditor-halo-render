@@ -3,8 +3,8 @@ import {ProviderList} from "./provider-list";
 import {RENDER_CLASS} from "../constant";
 
 export declare interface Provider {
-    check: (type: string) => boolean
-    process: (type:string,content: string, options: IOptions) => string
+    check(type: string): boolean
+    process(type:string,content: string, options: IOptions): string
 }
 
 export class ProviderFactory {

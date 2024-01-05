@@ -58,6 +58,18 @@ drive:baidu
 name: 网站资源集合
 link: https://www.baidu.com/
 password: abcde
+
+---
+
+gallery:grid
+[Image 1](/imgs/img1.png)
+[Image 2](/imgs/img2.png)
+
+---
+
+gallery:linear
+[Image 1](/imgs/img1.png)
+[Image 2](/imgs/img2.png)
 `
     render()
 })

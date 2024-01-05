@@ -61,6 +61,9 @@ module.exports = {
         })
     ],
     devServer: {
+        static: {
+            directory: path.join(__dirname , 'assets'),
+        },
         port: 9000,
         host: "0.0.0.0"
     }
