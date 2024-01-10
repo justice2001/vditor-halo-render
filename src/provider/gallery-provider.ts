@@ -17,7 +17,7 @@ export class GalleryProvider implements Provider {
         imgInfoList.forEach(info => {
             if (!info) return;
             const [, alt, url] = info.match(/\[(.*)]\((.*)\)/)
-            html+= `<div class="container"><img class="img" src="${url}" alt="${alt}" /></div>`
+            html+= `<div class="vditor--gallery-container"><img class="img" src="${url}" alt="${alt}" /></div>`
         })
         html += `</div>`
         // RETURN

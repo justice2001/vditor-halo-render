@@ -22,10 +22,8 @@
     display: flex;
     width: 100%;
 
-    .container {
+    .vditor--gallery-container {
       .img {
-        width: auto!important;
-        max-width: unset!important;
         border-radius: @border-radius!important;
       }
     }
@@ -38,7 +36,7 @@
       column-gap: 2%;
       row-gap: 10px;
 
-      .container {
+      .vditor--gallery-container {
         width: 32%;
         height: 0;
         position: relative;
@@ -69,11 +67,13 @@
       width: 100%;
       gap: 10px;
 
-      .container {
-        height: 400px;
+      .vditor--gallery-container {
+        height: 300px;
 
         .img {
           height: 99%;
+          width: auto!important;
+          max-width: unset!important;
         }
       }
     }
