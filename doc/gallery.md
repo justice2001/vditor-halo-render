@@ -1,4 +1,6 @@
-# 🧩 图集组件（开发中）
+# 🧩 图集组件
+
+
 
 该模块提供给用户上传图集的功能，可以让用户在一个模块中上传多张图片，组成一个图集，现在为用户提供两种排列方式：
 
@@ -10,9 +12,9 @@
 > 规划阶段语法，后续可能会变更
 
 ```markdown
-gallery:<type>
-[<image1 alt>](<image1 url>)
-[<image2 alt>](<image2 url>)
+gallery:<type>[<title>]
+![<image1 alt>](<image1 url>)
+![<image2 alt>](<image2 url>)
 ```
 
 ### type
@@ -21,6 +23,10 @@ gallery:<type>
 
 - `linear`：线性排列(默认)
 - `grid`：九宫格排列
+
+### image title
+
+图集的介绍，如果没有填写字段则会显示为图集
 
 ### image alt
 
