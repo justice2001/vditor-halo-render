@@ -48,6 +48,7 @@ function renderHalo(content: string, cdn: string): string;
 - [Tips组件](doc/tips.md)
 - [Git组件](doc/git.md)
 - [资源组件](doc/drive.md)
+- [图集组件](doc/gallery.md)
 
 ## 开发
 
